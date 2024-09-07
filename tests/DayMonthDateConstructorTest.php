@@ -2,7 +2,7 @@
     use PHPUnit\Framework\TestCase;
     use DayMonthDate\DayMonthDate;
 
-    final class DayMonthDateTest extends TestCase
+    final class DayMonthDateConstructorTest extends TestCase
     {
         public function testCanBeCreatedFromTwoDigitsDayAndMonth(): void
         {

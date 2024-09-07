@@ -31,13 +31,44 @@
             }
         }
 
-        public function getDay()
+        public function getDay(): int
         {
             return $this->day;
         }
 
-        public function getMonth()
+        public function getMonth(): int
         {
             return $this->month;
+        }
+
+        public function isLaterThan(DayMonthDate $date): bool
+        {
+            if($this->month > $date->getMonth())
+            {
+                return true;
+            }elseif($this->month < $date->getMonth())
+            {
+                return false;
+            }else{
+                return $this->day > $date->getDay();
+            }
+        }
+
+        public function isEarlierThan(DayMonthDate $date): bool
+        {
+            if($this->month < $date->getMonth())
+            {
+                return true;
+            }elseif($this->month > $date->getMonth())
+            {
+                return false;
+            }else{
+                return $this->day < $date->getDay();
+            }
+        }
+
+        public function same(DayMonthDate $date): bool
+        {
+            return $this->month == $date->getMonth() && $this->day == $date->getDay();
         }
     }
