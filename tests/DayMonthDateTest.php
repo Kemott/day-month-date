@@ -65,4 +65,66 @@
             $this->expectException(\TypeError::class);
             $dayMonthDate = new DayMonthDate($date);
         }
+
+        public function testCantBeCreatedFromMonthLowerThanOne(): void
+        {
+            $date = "01.00";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+        }
+
+        public function testCantBeCreatedFromMonthBiggerThanTwelve(): void
+        {
+            $date = "05.13";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+        }
+
+        public function testCantBeCreatedFromDayBiggerThan31(): void
+        {
+            $date = "32.01";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "32.03";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "32.05";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "32.07";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "32.08";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "32.10";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "32.12";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+        }
+
+        public function testCantBeCreatedFromDayBiggerThan30In30DaysMonth(): void
+        {
+            $date = "31.04";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "31.06";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "31.09";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+            $date = "31.11";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+        }
+
+        public function testCantBeCreatedFromDayBiggerThan29InFebruary(): void
+        {
+            $date = "30.02";
+            $this->expectException(\InvalidArgumentException::class);
+            $dayMonthDate = new DayMonthDate($date);
+        }
     }
