@@ -1,0 +1,19 @@
+{
+    "name": "kemott/day-month-date",
+    "type": "library",
+    "description": "A package that enables and simplifies operations on dates for which it is not necessary, or even possible, to indicate the year.",
+    "keywords": ["date", "day", "month"],
+    "homepage": "https://github.com/Kemott/day-month-date",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomasz Burzyński",
+            "email": "tomasz.burzynski.91@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "nesbot/carbon": "^3.8.0"
+    }
+}
