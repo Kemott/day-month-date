@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "DayMonthDate\\": "src/"
+            "Kemott\\DayMonthDate\\": "src/"
         }
     },
     "require-dev": {
