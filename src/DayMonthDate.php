@@ -14,6 +14,21 @@
             {
                 throw new \InvalidArgumentException("Day or month value can't be lower than 1");
             }
+            if($this->month > 12)
+            {
+                throw new \InvalidArgumentException("Month value can't be bigger than 12");
+            }
+            if($this->day > 29 && $this->month == 2)
+            {
+                throw new \InvalidArgumentException("February can't have more than 29 days");
+            }
+            elseif($this->day > 30 && in_array($this->month, [4,6,9,11]))
+            {
+                throw new \InvalidArgumentException("The given month can have a maximum of 30 days");
+            }elseif($this->day > 31)
+            {
+                throw new \InvalidArgumentException("The given month can have a maximum of 31 days");
+            }
         }
 
         public function getDay()
