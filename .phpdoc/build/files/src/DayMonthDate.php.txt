@@ -18,7 +18,7 @@
          * 
          * @since 1.0.0
          * @throws \InvalidArgumentException
-         * @param string $date Date in one of the following formats: "dd.mm", "d.mm", "dd.m", "d.m"
+         * @example constructor.php 2 Different ways to create a date object
          */
         public function __construct(string $date)
         {
@@ -46,29 +46,16 @@
             }
         }
 
-        /**
-         * @since 1.0.0
-         * @return int The numeric value of the day in the date
-         */
         public function getDay(): int
         {
             return $this->day;
         }
 
-        /**
-         * @since 1.0.0
-         * @return int The numeric value of the month in the date
-         */
         public function getMonth(): int
         {
             return $this->month;
         }
 
-        /**
-         * @since 1.1.0
-         * @param DayMonthDate $date The object you want to compare $this with
-         * @return bool Is the date later than $this
-         */
         public function isLaterThan(DayMonthDate $date): bool
         {
             if($this->month > $date->getMonth())
@@ -82,11 +69,6 @@
             }
         }
 
-        /**
-         * @since 1.1.0
-         * @param DayMonthDate $date The object you want to compare $this with
-         * @return bool Is the date earlier than $this
-         */
         public function isEarlierThan(DayMonthDate $date): bool
         {
             if($this->month < $date->getMonth())
@@ -100,11 +82,6 @@
             }
         }
 
-        /**
-         * @since 1.1.0
-         * @param DayMonthDate $date The object you want to compare $this with
-         * @return bool Is the date the same as $this
-         */
         public function same(DayMonthDate $date): bool
         {
             return $this->month == $date->getMonth() && $this->day == $date->getDay();
